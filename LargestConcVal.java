@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 //leetcode 2562
 class LargestConcVal{
-    public long findTheArrayConcVal(int[] num){
+    public long findTheArrayConcVal1(int[] num){
         if(num.length<=1){
             return 1;
         }
