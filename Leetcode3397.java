@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class Leetcode3397 {
@@ -19,12 +20,32 @@ public class Leetcode3397 {
         return ans;
     }
 
+
+    public static int maxDistinctElements(int[] nums, int k) {
+          Arrays.sort(nums);
+        int ans = 0;
+        long lastUsed = Long.MIN_VALUE;
+
+        for (int num : nums) {
+            long start = num - k;
+            long end = num + k;
+
+           
+            long val = Math.max(start, lastUsed + 1);
+            if (val <= end) {
+                ans++;
+                lastUsed = val;
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
     
         
-        int [] arr = {4,4,4,4};
-        int k = 1;
-        int ans = maxDistinctElemt(arr, k);
+        int [] arr = {1,2,2,3,3,4};
+        int k = 2;
+        int ans = maxDistinctElements(arr, k);
         System.out.println(ans);
     }
 }
