@@ -7,7 +7,7 @@ public class Leetcode3397 {
 
         for(int i=0;i<arr.length;i++){
             for(int j = -k;j<=k;j++){
-                int temp = arr[i]- j;
+                int temp = arr[i]+j;
                 if(!h1.contains(temp)){
                     ans++;
                     h1.add(temp);
